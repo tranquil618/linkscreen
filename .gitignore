@@ -1,0 +1,45 @@
+# Visual Studio / .NET
+.vs/
+bin/
+obj/
+*.user
+*.suo
+
+# CMake
+build/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+
+# DevEco Studio / HarmonyOS
+.idea/
+.hvigor/
+oh_modules/
+local.properties
+*.hap
+*.app
+
+# Native build products
+*.obj
+*.o
+*.pdb
+*.ilk
+*.dll
+*.lib
+*.exe
+
+# Signing material must never enter source control
+*.p12
+*.pfx
+*.cer
+*.key
+*.pem
+signing-config.json
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+
