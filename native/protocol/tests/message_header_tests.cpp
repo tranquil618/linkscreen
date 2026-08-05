@@ -105,6 +105,20 @@ void oversized_payload_cannot_be_encoded() {
     expect(rejected, "encode_header rejects a payload larger than 1 MiB");
 }
 
+void unknown_message_type_cannot_be_encoded() {
+    linkscreen::protocol::MessageHeader invalid{};
+    invalid.type = static_cast<linkscreen::protocol::MessageType>(0x7FFF);
+
+    bool rejected = false;
+    try {
+        (void)linkscreen::protocol::encode_header(invalid);
+    } catch (const std::invalid_argument&) {
+        rejected = true;
+    }
+
+    expect(rejected, "encode_header rejects an unknown message type");
+}
+
 } // namespace
 
 int main() {
@@ -112,6 +126,7 @@ int main() {
     encoded_header_can_be_decoded();
     malformed_headers_are_rejected();
     oversized_payload_cannot_be_encoded();
+    unknown_message_type_cannot_be_encoded();
 
     if (failures == 0) {
         std::cout << "All protocol tests passed.\n";
