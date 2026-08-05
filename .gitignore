@@ -20,6 +20,7 @@ oh_modules/
 local.properties
 *.hap
 *.app
+artifacts/
 
 # Native build products
 *.obj
@@ -42,4 +43,3 @@ signing-config.json
 *.log
 .DS_Store
 Thumbs.db
-

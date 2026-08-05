@@ -1,0 +1,12 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "LinkScreen HarmonyOS entry module",
+  "main": "",
+  "author": "LinkScreen",
+  "license": "Proprietary",
+  "dependencies": {
+    "libentry.so": "file:./src/main/cpp/types/libentry"
+  }
+}
+

@@ -1,0 +1,2 @@
+# Release obfuscation rules will be defined before store submission.
+

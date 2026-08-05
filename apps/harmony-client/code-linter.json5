@@ -1,0 +1,6 @@
+{
+  "files": ["**/*.ets"],
+  "ignore": ["**/node_modules/**", "**/oh_modules/**", "**/build/**"],
+  "ruleSet": ["plugin:@typescript-eslint/recommended"]
+}
+

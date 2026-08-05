@@ -1,0 +1,7 @@
+{
+  "name": "libentry.so",
+  "version": "1.0.0",
+  "description": "LinkScreen native protocol bindings",
+  "types": "./index.d.ts"
+}
+

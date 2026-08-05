@@ -61,3 +61,21 @@
 ```
 
 主机完成一次 `Hello` / `HelloAck` 握手后退出。配对、认证和加密完成前，不允许将监听地址改为所有网络接口。
+
+## HarmonyOS 开发构建
+
+HarmonyOS SDK API 21 对工程路径有 ASCII 限制，而当前仓库路径包含中文。构建脚本会自动复制所需源码到临时 ASCII 路径，完成构建后复制 HAP 产物回来：
+
+```powershell
+.\scripts\build-harmony.ps1
+```
+
+产物位置：
+
+```text
+artifacts/harmony/linkscreen-entry-default-unsigned.hap
+```
+
+该 HAP 包含 ArkTS 界面、Network Kit TCP 客户端、C++ NAPI 桥接以及共享 LinkScreen 协议库。它尚未签名，不能直接安装到真机。真机调试前需要在 DevEco Studio 登录华为开发者账号并启用自动签名。
+
+由于 DevEco Studio 同样限制中文工程路径，进行图形化调试和签名时，应将仓库克隆或移动到纯 ASCII 路径，例如 `D:\LinkScreen`，再打开 `apps\harmony-client`。

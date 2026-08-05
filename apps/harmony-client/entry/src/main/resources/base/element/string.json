@@ -1,0 +1,8 @@
+{
+  "string": [
+    { "name": "module_desc", "value": "灵犀副屏鸿蒙客户端" },
+    { "name": "EntryAbility_desc", "value": "灵犀副屏主界面" },
+    { "name": "EntryAbility_label", "value": "灵犀副屏" }
+  ]
+}
+
