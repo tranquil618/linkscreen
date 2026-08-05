@@ -6,3 +6,6 @@ include(CTest)
 
 add_subdirectory(native/protocol)
 
+if(WIN32)
+    add_subdirectory(native/windows-engine)
+endif()

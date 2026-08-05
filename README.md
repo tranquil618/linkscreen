@@ -39,3 +39,25 @@
 - 这个决定带来哪些收益和代价？
 
 已经生效的 ADR 原则上不直接改写结论。方案发生重大变化时，应增加一份新 ADR，并将旧 ADR 标记为“已取代”，以保留决策历史。
+
+## Windows 开发构建
+
+在仓库根目录执行：
+
+```powershell
+& 'C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe' --preset windows-debug
+& 'C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe' --build --preset windows-debug
+& 'C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\ctest.exe' --preset windows-debug
+```
+
+当前开发主机只监听 `127.0.0.1:47831`。分别在两个终端运行：
+
+```powershell
+.\build\windows-debug\native\windows-engine\Debug\linkscreen_host_cli.exe
+```
+
+```powershell
+.\build\windows-debug\native\windows-engine\Debug\linkscreen_handshake_client.exe
+```
+
+主机完成一次 `Hello` / `HelloAck` 握手后退出。配对、认证和加密完成前，不允许将监听地址改为所有网络接口。
